@@ -19,12 +19,14 @@ if language_flag:
     st.write("Please specify the language of each clip if not English (default: English):")
     language_str = st.text_input("Support only acronym like 'en', 'th', 'jp', ...", 
                            "th, th, th, th")
-    st.write(language_str)
-    lang_list = language_str.split(',').strip()
+    # st.write(language_str)
+    lang_list = language_str.split(',')
+    lang_list = [lang.strip() for lang in lang_list]
 else:
     lang_list = []
 
-raw_video_list = raw_video_str.split(',').strip()
+raw_video_list = raw_video_str.split(',')
+raw_video_list = [v.strip() for v in raw_video_list]
 video_id_list = []
 for r in raw_video_list:
     if "http" in r:
