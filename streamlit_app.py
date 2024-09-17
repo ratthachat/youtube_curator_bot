@@ -20,10 +20,11 @@ if language_flag:
     language_str = st.text_input("Support only acronym like 'en', 'th', 'jp', ...", 
                            "th, th, th, th")
     lang_list = language_str.split(',')
-    st.write(lang_list)
     lang_list = [lang.strip() for lang in lang_list]
 else:
     lang_list = []
+
+st.write(lang_list)
 
 raw_video_list = raw_video_str.split(',')
 raw_video_list = [v.strip() for v in raw_video_list]
@@ -50,7 +51,7 @@ if ready_flag:
             ret = YouTubeTranscriptApi.get_transcript(id, languages=[lang])
             transcript_raw_list.append(ret)
         except Exception as e:
-            st.write(f"Could not get the transcript for video ID: {id} - please verify the ID or specified language or URL")
+            st.write(f"Could not get the transcript for video ID: {id}, lang:{lang} - please verify the ID or specified language or URL")
             st.write(e)
 
     st.write(f'** Total {len(transcript_raw_list)} valid clips where transcripts were successfully extracted**')
