@@ -19,8 +19,8 @@ if language_flag:
     st.write("Please specify the language of each clip if not English (default: English):")
     language_str = st.text_input("Support only acronym like 'en', 'th', 'jp', ...", 
                            "th, th, th, th")
-    # st.write(language_str)
     lang_list = language_str.split(',')
+    st.write(lang_list)
     lang_list = [lang.strip() for lang in lang_list]
 else:
     lang_list = []
