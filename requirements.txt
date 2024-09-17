@@ -1,7 +1,7 @@
-streamlit >= 1.38.0
+streamlit>=1.38.0
 numpy
 pandas
 Pillow
 google-generativeai
-youtube-transcript-api
+youtube-transcript-api==0.6.2
 streamlit-option-menu
